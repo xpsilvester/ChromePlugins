@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "掘金文章数据导出",
+  "version": "1.0",
+  "description": "从掘金网站获取文章数据并导出到Excel",
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://juejin.cn/**"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
